@@ -1,0 +1,15 @@
+<header>
+    <h1>Listado de categorías</h1>
+
+    <ul>
+        {% for categoria in categorias %}
+            <li>{{categoria.nombre}}</li>
+        {% endfor %}
+    </ul>
+
+    <select name="categoria" id="">
+        {% for categoria in categorias %}
+        <option value="{{categoria.id}}">{{categoria.nombre}}</option>
+        {% endfor %}
+    </select>
+</header>

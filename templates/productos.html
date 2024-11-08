@@ -1,0 +1,21 @@
+<header>
+    <h1>Listado de productos</h1>
+    <h2>Cantidad de productos disponibles:  {{cantidad_productos}}</h2>
+
+    <form method="get">
+        <label for="">Buscar por nombre o descripción</label>
+        <input type="text" name="nombre" value="{{nombre}}">
+        <label for="">Filtrar precio desde</label>
+        <input type="text" name="precio_min" value="{{precio_min}}">
+        <input type="submit" value="Buscar">
+    </form>
+
+    <h2>Cantidad de productos encontrados:  {{productos|length}}</h2>
+
+    <ol>
+        {% for producto in productos %}
+            <li>Producto: {{producto.nombre}} - precio: {{producto.precio}}  - stock: {{producto.stock}} - descripción: {{producto.descripcion}}</li>
+        {% endfor %}
+    </ol>
+
+</header>
